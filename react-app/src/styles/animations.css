@@ -1,0 +1,159 @@
+:root {
+  --anim-in-duration: 1s;
+  --anim-out-duration: 1s;
+}
+
+/* Animations IN */
+.animation-in.transition-slide { animation: slideIn var(--anim-in-duration) forwards; }
+.animation-in.transition-bounce { animation: bounceIn var(--anim-in-duration) cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
+.animation-in.transition-fade { animation: fadeIn var(--anim-in-duration) forwards; }
+.animation-in.transition-swing { animation: swingIn var(--anim-in-duration) forwards; transform-origin: top center; }
+.animation-in.transition-flip { animation: flipIn var(--anim-in-duration) forwards; backface-visibility: visible; }
+.animation-in.transition-elastic { animation: elasticIn var(--anim-in-duration) forwards; }
+.animation-in.transition-zoom { animation: zoomIn var(--anim-in-duration) forwards; }
+.animation-in.transition-rotate { animation: rotateIn var(--anim-in-duration) forwards; }
+.animation-in.transition-wave { animation: waveIn var(--anim-in-duration) forwards; }
+.animation-in.transition-glitch { animation: glitchIn var(--anim-in-duration) forwards; }
+.animation-in.transition-curtain { animation: curtainIn var(--anim-in-duration) forwards; transform-origin: top; }
+.animation-in.transition-scroll { animation: scrollIn var(--anim-in-duration) forwards; }
+
+/* Animations OUT */
+.animation-out.transition-slide { animation: slideOut var(--anim-out-duration) forwards; }
+.animation-out.transition-bounce { animation: bounceOut var(--anim-out-duration) forwards; }
+.animation-out.transition-fade { animation: fadeOut var(--anim-out-duration) forwards; }
+.animation-out.transition-swing { animation: swingOut var(--anim-out-duration) forwards; transform-origin: top center; }
+.animation-out.transition-flip { animation: flipOut var(--anim-out-duration) forwards; backface-visibility: visible; }
+.animation-out.transition-elastic { animation: elasticOut var(--anim-out-duration) forwards; }
+.animation-out.transition-zoom { animation: zoomOut var(--anim-out-duration) forwards; }
+.animation-out.transition-rotate { animation: rotateOut var(--anim-out-duration) forwards; }
+.animation-out.transition-wave { animation: waveOut var(--anim-out-duration) forwards; }
+.animation-out.transition-glitch { animation: glitchOut var(--anim-out-duration) forwards; }
+.animation-out.transition-curtain { animation: curtainOut var(--anim-out-duration) forwards; transform-origin: top; }
+.animation-out.transition-scroll { animation: scrollOut var(--anim-out-duration) forwards; }
+
+/* Keyframes */
+
+@keyframes slideIn {
+  0% { transform: translateX(-150%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideOut {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-150%); opacity: 0; }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  70% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes bounceOut {
+  0% { transform: scale(1); opacity: 1; }
+  20% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.3); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes swingIn {
+  0% { transform: rotateX(-100deg); opacity: 0; }
+  100% { transform: rotateX(0deg); opacity: 1; }
+}
+@keyframes swingOut {
+  0% { transform: rotateX(0deg); opacity: 1; }
+  100% { transform: rotateX(-100deg); opacity: 0; }
+}
+
+@keyframes flipIn {
+  0% { transform: perspective(400px) rotateY(-90deg); opacity: 0; }
+  100% { transform: perspective(400px) rotateY(0deg); opacity: 1; }
+}
+@keyframes flipOut {
+  0% { transform: perspective(400px) rotateY(0deg); opacity: 1; }
+  100% { transform: perspective(400px) rotateY(90deg); opacity: 0; }
+}
+
+@keyframes elasticIn {
+  0% { transform: scale(0); opacity: 0; }
+  40% { transform: scale(1.2); opacity: 1; }
+  50% { transform: scale(0.9); }
+  60% { transform: scale(1.05); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes elasticOut {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes zoomOut {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes rotateIn {
+  0% { transform: rotate(-200deg) scale(0); opacity: 0; }
+  100% { transform: rotate(0) scale(1); opacity: 1; }
+}
+@keyframes rotateOut {
+  0% { transform: rotate(0) scale(1); opacity: 1; }
+  100% { transform: rotate(200deg) scale(0); opacity: 0; }
+}
+
+@keyframes waveIn {
+  0% { transform: translateY(100%) skewY(10deg); opacity: 0; }
+  50% { transform: translateY(-10%) skewY(-5deg); opacity: 1; }
+  100% { transform: translateY(0) skewY(0); opacity: 1; }
+}
+@keyframes waveOut {
+  0% { transform: translateY(0) skewY(0); opacity: 1; }
+  50% { transform: translateY(-10%) skewY(-5deg); opacity: 1; }
+  100% { transform: translateY(100%) skewY(10deg); opacity: 0; }
+}
+
+@keyframes glitchIn {
+  0% { clip-path: inset(50% 0 50% 0); opacity: 0; }
+  20% { clip-path: inset(10% 0 60% 0); opacity: 1; transform: translate(-5px, 5px); }
+  40% { clip-path: inset(80% 0 5% 0); transform: translate(5px, -5px); }
+  60% { clip-path: inset(20% 0 40% 0); transform: translate(-5px, 5px); }
+  80% { clip-path: inset(60% 0 10% 0); transform: translate(5px, -5px); }
+  100% { clip-path: inset(0 0 0 0); transform: translate(0); opacity: 1; }
+}
+@keyframes glitchOut {
+  0% { clip-path: inset(0 0 0 0); transform: translate(0); opacity: 1; }
+  20% { clip-path: inset(60% 0 10% 0); transform: translate(5px, -5px); }
+  40% { clip-path: inset(20% 0 40% 0); transform: translate(-5px, 5px); }
+  60% { clip-path: inset(80% 0 5% 0); transform: translate(5px, -5px); }
+  80% { clip-path: inset(10% 0 60% 0); opacity: 1; transform: translate(-5px, 5px); }
+  100% { clip-path: inset(50% 0 50% 0); opacity: 0; }
+}
+
+@keyframes curtainIn {
+  0% { transform: scaleY(0); opacity: 0; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+@keyframes curtainOut {
+  0% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(0); opacity: 0; }
+}
+
+@keyframes scrollIn {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes scrollOut {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100%); opacity: 0; }
+}
